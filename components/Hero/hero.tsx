@@ -1,11 +1,19 @@
 "use client";
 
 import { motion } from "motion/react";
+import dynamic from "next/dynamic";
+
+const Scene = dynamic(
+  () => import("@/components/Three/Scene"),
+  {
+    ssr: false,
+  }
+);
 
 export default function Hero() {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden px-6 pt-24">
-      
+
       {/* Background Glow */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-125 w-125 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-[120px]" />
 
@@ -17,6 +25,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+
           {/* Small Label */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -59,11 +68,13 @@ export default function Hero() {
 
           {/* Buttons */}
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+
             <a
               href="#work"
               className="group rounded-full bg-cyan-400 px-7 py-3.5 text-center font-semibold text-black transition hover:bg-cyan-300"
             >
               Explore My Work
+
               <span className="ml-2 inline-block transition-transform group-hover:translate-x-1">
                 →
               </span>
@@ -77,55 +88,39 @@ export default function Hero() {
             >
               GitHub ↗
             </a>
+
           </div>
         </motion.div>
 
-        {/* Right Visual */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 1,
-            delay: 0.2,
-          }}
-          className="relative flex h-112.5 items-center justify-center"
-        >
-          {/* Outer Ring */}
-          <div className="absolute h-72 w-72 animate-[spin_20s_linear_infinite] rounded-full border border-cyan-400/20 sm:h-96 sm:w-96" />
+        {/* RIGHT SIDE - 3D WORLD */}
 
-          {/* Middle Ring */}
-          <div className="absolute h-56 w-56 animate-[spin_15s_linear_infinite_reverse] rounded-full border border-blue-500/20 sm:h-72 sm:w-72" />
+        <div className="relative h-112.5 w-full">
 
-          {/* Core */}
-          <div className="relative flex h-40 w-40 items-center justify-center rounded-full border border-cyan-400/30 bg-cyan-400/5 shadow-[0_0_100px_rgba(34,211,238,0.2)] backdrop-blur-xl sm:h-48 sm:w-48">
-            <div className="absolute h-20 w-20 animate-pulse rounded-full bg-cyan-400/20 blur-2xl" />
-
-            <div className="relative text-center">
-              <div className="text-4xl">◈</div>
-
-              <p className="mt-2 text-xs uppercase tracking-[0.3em] text-cyan-300">
-                AI CORE
-              </p>
-            </div>
+          {/* 3D Scene */}
+          <div className="absolute inset-0">
+            <Scene />
           </div>
 
-          {/* Floating Nodes */}
-          <div className="absolute left-[12%] top-[20%] rounded-full border border-cyan-400/20 bg-black/60 px-4 py-2 text-xs text-cyan-300 backdrop-blur">
+          {/* Overlay Labels */}
+
+          <div className="pointer-events-none absolute left-[8%] top-[18%] rounded-full border border-cyan-400/20 bg-black/60 px-4 py-2 text-xs text-cyan-300 backdrop-blur">
             NETWORK
           </div>
 
-          <div className="absolute bottom-[18%] right-[8%] rounded-full border border-blue-400/20 bg-black/60 px-4 py-2 text-xs text-blue-300 backdrop-blur">
-            CLOUD
-          </div>
-
-          <div className="absolute right-[5%] top-[18%] rounded-full border border-purple-400/20 bg-black/60 px-4 py-2 text-xs text-purple-300 backdrop-blur">
+          <div className="pointer-events-none absolute right-[8%] top-[20%] rounded-full border border-purple-400/20 bg-black/60 px-4 py-2 text-xs text-purple-300 backdrop-blur">
             AI
           </div>
 
-          <div className="absolute bottom-[20%] left-[5%] rounded-full border border-green-400/20 bg-black/60 px-4 py-2 text-xs text-green-300 backdrop-blur">
-            SYSTEMS
+          <div className="pointer-events-none absolute bottom-[18%] right-[10%] rounded-full border border-blue-400/20 bg-black/60 px-4 py-2 text-xs text-blue-300 backdrop-blur">
+            CLOUD
           </div>
-        </motion.div>
+
+          <div className="pointer-events-none absolute bottom-[20%] left-[8%] rounded-full border border-green-400/20 bg-black/60 px-4 py-2 text-xs text-green-300 backdrop-blur">
+           SYSTEMS
+          </div>
+
+        </div>
+
       </div>
 
       {/* Scroll indicator */}
@@ -140,6 +135,7 @@ export default function Hero() {
         <span>Scroll</span>
         <span className="text-lg">↓</span>
       </motion.div>
+
     </section>
   );
 }

@@ -22,7 +22,7 @@ export default function Navbar() {
           href="#"
           className="text-lg font-bold tracking-tight text-white"
         >
-          Sashwat<span className="text-cyan-400">.</span>Shukla
+          Sashwat<span className="text-cyan-400"> </span>Shukla
         </a>
 
         {/* Desktop Navigation */}
