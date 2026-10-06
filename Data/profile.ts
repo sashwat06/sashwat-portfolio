@@ -14,7 +14,7 @@ export const profile = {
     "IT Support Engineer with hands-on experience supporting enterprise IT environments, troubleshooting Windows systems, networking issues, applications and end-user incidents. Currently expanding into Systems Administration, Cloud Infrastructure, Automation and AI-powered solutions.",
 
   social: {
-    github: "https://github.com/sashwat06/Sashwat-Portfolio",
+    github: "https://github.com/sashwat06/",
     linkedin: "https://www.linkedin.com/in/sashwat-shukla-9a45a7404/",
   },
 };

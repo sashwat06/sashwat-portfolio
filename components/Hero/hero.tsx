@@ -17,7 +17,8 @@ export default function Hero() {
       {/* Background Glow */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-125 w-125 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-[120px]" />
 
-      <div className="mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-2">
+      {/* Step 2C: tighter gap on phones */}
+      <div className="mx-auto grid w-full max-w-6xl items-center gap-8 md:gap-12 lg:grid-cols-2">
 
         {/* Left Content */}
         <motion.div
@@ -40,8 +41,8 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          {/* Heading */}
-          <h1 className="text-5xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
+          {/* Heading - Step 2D: responsive text size */}
+          <h1 className="text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
             I build
             <br />
 
@@ -93,8 +94,8 @@ export default function Hero() {
         </motion.div>
 
         {/* RIGHT SIDE - 3D WORLD */}
-
-        <div className="relative h-112.5 w-full">
+        {/* Step 2B: 340px / 400px / 450px (already set via h-85 / h-100 / h-112.5) */}
+        <div className="relative h-85 w-full sm:h-100 lg:h-112.5">
 
           {/* 3D Scene */}
           <div className="absolute inset-0">
@@ -116,7 +117,7 @@ export default function Hero() {
           </div>
 
           <div className="pointer-events-none absolute bottom-[20%] left-[8%] rounded-full border border-green-400/20 bg-black/60 px-4 py-2 text-xs text-green-300 backdrop-blur">
-           SYSTEMS
+            SYSTEMS
           </div>
 
         </div>

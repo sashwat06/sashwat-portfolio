@@ -4,10 +4,17 @@ import About from "@/components/About/about";
 import ExperienceTimeline from "@/components/Experience/ExperienceTimeline";
 import Skills from "@/components/Skills/Skills";
 import ProjectGrid from "@/components/Project/ProjectGrid";
+import ChatBot from "@/components/AI/ChatBot";
+import GitHubSection from "@/components/Github/GitHubSection";
+import CommandCenter from "@/components/command-center/CommandCenter";
+import Contact from "@/components/contact/Contact";
+import Footer from "@/components/Footer/Footer";
+import LoadingScreen from "@/components/loading/LoadingScreen";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
+      <LoadingScreen />
 
       <Navbar />
 
@@ -19,22 +26,17 @@ export default function Home() {
 
       <Skills />
 
+      <CommandCenter />
+
       <ProjectGrid />
 
-      <section
-        id="contact"
-        className="flex min-h-[40vh] items-center justify-center border-t border-white/5 px-6"
-      >
-        <div className="text-center">
-          <p className="mb-4 text-sm uppercase tracking-[0.3em] text-cyan-400">
-            Contact
-          </p>
+      <GitHubSection />
 
-          <h2 className="text-4xl font-bold">
-            Let's build something.
-          </h2>
-        </div>
-      </section>
+      <Contact />
+
+      <ChatBot />
+
+      <Footer />
 
     </main>
   );
